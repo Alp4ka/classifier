@@ -1,0 +1,18 @@
+Process the provided user input to accurately classify it using given classes description.
+
+The description of classes is:
+{{.ClassesJSON}}
+
+User input is:
+{{.Input}}
+
+{{ $length := len .AdditionalContext }} {{ if gt $length 0 }}
+Additional context:
+{{.AdditionalContext}}
+{{end}}
+
+Populate the provided model with appropriate values.
+Respond with the ONLY ONE class which is the most similar by meaning to the given User input taking classes description
+and Additional context into account!
+Please generate a valid JSON model as a response that adheres to the specified model structure basing on the next JSON structure:
+{{.StructureJSON}}
